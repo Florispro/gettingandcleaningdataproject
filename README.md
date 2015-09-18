@@ -10,6 +10,7 @@ The data that we're interested in for this project, comes from a ['wearable comp
 
 ## Instructions on getting the tidy data
 To run the script to get the tidy data, you have to
+
 1. Get the all R scripts in this repository in your R working directory. These are the required R scripts:
   - run_analysis.R
   - get_and_clean_observations.R
