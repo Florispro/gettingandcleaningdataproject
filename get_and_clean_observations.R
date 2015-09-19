@@ -5,8 +5,6 @@ get_and_clean_observations <- function(observations_raw, activities_raw, subject
   # - Get the acitivity and subject variables in the same table as the rest of the variables
   # - Turn the acitivity variable into a factor with descriptive names
   
-  source("clean_column_names.R")
-  
   # 1. Get the raw data  
   
   observations_laf <- laf_open_fwf(observations_raw, 

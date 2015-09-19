@@ -11,6 +11,7 @@
 require(LaF)
 require(dplyr)
 source("get_and_clean_observations.R")
+source("clean_column_names.R")
 
 # 1. Download the raw dataset (if required)
 # We assume the dataset has been downloaded if the root folder

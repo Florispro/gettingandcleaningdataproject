@@ -3,8 +3,8 @@ clean_column_names <- function(observations) {
   # from the raw data more descriptive
   
   observations <- observations %>%
-    rename_(.dots=setNames(names(.), gsub("^f", "FFT", names(.)))) %>%
-    rename_(.dots=setNames(names(.), gsub('^t', '', names(.)))) %>%
+    rename_(.dots=setNames(names(.), gsub("^f", "Frequency", names(.)))) %>%
+    rename_(.dots=setNames(names(.), gsub('^t', 'Time', names(.)))) %>%
     rename_(.dots=setNames(names(.), gsub('Acc', 'Acceleration', names(.)))) %>%
     rename_(.dots=setNames(names(.), gsub('[.]', '', names(.)))) %>%
     rename_(.dots=setNames(names(.), gsub('mean', 'Mean', names(.)))) %>%
