@@ -1,9 +1,9 @@
 # 'Getting and Cleaning Data' course project
 
 This repository contains the files required for the the '[Getting and Cleaning Data](https://class.coursera.org/getdata-032/)' course on Coursera.
-* The tidy dataset is called clean_set.txt, and can be found in the data folder,
-* The code book is called <...>
-* The script to generate the tidy dataset is run_analysis.R. Please see the instructions below on how to run this.
+* The tidy dataset is called 'clean_set.txt', and can be found in the data folder,
+* The code book is called 'Project code book.txt'
+* The script to generate the tidy dataset is 'run_analysis.R'. Please see the instructions below on how to run this.
 
 ## Background
 The data that we're interested in for this project, comes from a ['wearable computing' experiment](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
@@ -30,24 +30,24 @@ This script downloads and reads in the raw data from the experiment. It then cle
 
 We will go through the cleaning process in detail.
 
-### Gather all the variables in one table
+#### Gather all the variables in one table
 
 The raw data has put the data on the measurements, activity and subject per observation in two different files. That means the data for one observation is spread over three files. This script merges all this data, so that each observation has all its data in one table.
 
-### Rename the variable and values
+#### Rename the variable and values
 
 The variables in the raw data contain a lot of abbreviations. To make sure it is clear from the variable name what has been measured, the abbreviations are replaced with the full description of the measurement. 
 
 The activity data are encoded as numbers. The raw data does provide a mapping of numbers to descriptive activity names like 'WALKING'. We modify the table with observation data to use the descriptive names instead of the numbers.
 
-### Get only the variables for the mean and standard deviation measurements
+#### Get only the variables for the mean and standard deviation measurements
 
 The raw data includes a lot of estimations of different variables per observation. For this project we are only interested in the estimations of the mean and standard deviation variables. So the script filters out all the other variables from the raw data.
 
-### Merge the observations in one dataset
+#### Merge the observations in one dataset
 
 The raw data is split into a 'train' and 'test' set of observations. The subjects were split into 'train' and 'test' subjects. The types of activities and variables measured are the same across the two sets of data. So in this project we merge the two sets of observations into one big set.
 
-### Summarization (mean) by activity and subject
+#### Summarization (mean) by activity and subject
 
 The raw data includes a total of 10299 observations. The observations were made on the activities (six types of activities) of thirty test subjects. A natural summarization is to show the average of each measured variable by subject and activity. The output of the script is exactly this summarization.
