@@ -1,0 +1,63 @@
+ACTIVITY
+	The type of activity performed by the subject wearing the smartphone
+	Observations were made for the following activities:
+	1. WALKING
+	2. WALKING_UPSTAIRS
+	3. WALKING_DOWNSTAIRS
+	4. SITTING
+	5. STANDING
+	6. LAYING
+
+SUBJECT
+	The ID of the subject doing the activity.
+	The experiment including 30 subjects. These subjects are numbered
+	by ID's between 1 and 30.
+	
+
+We describe the rest of the variables by the different possible
+components in the name of the variable. 
+
+Each of the variables in the dataset is an average per subject per 
+activity over all the observations recorded in the raw data.
+
+TIME, FREQUENCY
+	The raw signals coming from the accelerometer and gyroscope in the
+	smartphone were measured in the time domain. These variables are
+	prefixed with 'Time'.
+	
+	To some raw signals from the time domain a Fast Fourer Transform was
+	applied, to get values in the frequency domain. These variables are
+	prefixed with 'Frequency'.
+
+BODY, GRAVITY
+	Acceleration signals were split into signals for the accelaration for
+	the body and signals for gravity acceleration.
+
+ACCELERATION, GYRO
+	Signals would either come from the accelerometer or the gyroscope of
+	the Samsumg smartphone. Variables for the accelerometer contain the
+	word 'Acceleration'. For the gyroscope the variables contain the
+	word 'Gyro'. The 'Gyro' variables measure angular velocity.
+
+JERK
+	Both the Acceleration and Gyro measurements were derived in time to
+	obtain 'Jerk' signals ('AccelerationJerk' and 'GyroJerk' respectively).
+
+X, Y, Z
+	All measurements were measured in three axes 'X', 'Y' and 'Z'. The
+	axis along which the variable is measured is at the end of the
+	variable name.
+	
+MAGNITUDE
+	The magnitude of the three-dimensional signals (X, Y, Z) was calculated
+	using the Euclidean norm.
+
+MEAN
+	For variables with 'Mean' in the name, the measurement is an estimation
+	of the mean of the measured value over a short time period. Observations
+	were made at a constant rate of 50 Hz.
+
+STANDARDDEVIATION
+	For variables with 'StandardDeviation' in the name, the measurement is 
+	an estimation of the standard deviation of the measured value over a 
+	short time period. Observations were made at a constant rate of 50 Hz.
