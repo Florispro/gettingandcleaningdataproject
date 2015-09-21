@@ -44,21 +44,23 @@ MEASURED_QUANTITY
 		The magnitude of the angular velocity, using the Euclidean norm
 	8. GyroJerkMagnitude
 		The magnitude of the angular jerk, using the Euclidean norm		
-		
+
 MEASURED_FUNCTION
 	The function which was measured in the observation. Possible values are:
 	1. Mean
 	2. StandardDeviation
 
 AXIS
-	The axis along which the measurement was taken. N.A. values indicate the
+	The axis along which the measurement was taken. Empty values indicate the
 	measurement is not along an axis, but instead measures the magnitude.
 	Possible values are:
 	1. X
 	2. Y
 	3. Z
-	4. N.A.
+	4. empty string
 
 FUNCTION_VALUE
 	The value of the measured function. It is an average per subject per 
 	activity over all the observations recorded in the raw data.
+	The unit depends on the MEAUSRED_QUANTITY and DOMAIN values. Only
+	SI units are used.

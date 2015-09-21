@@ -64,7 +64,8 @@ clean_set <- clean_set %>%
              group_by(activity, subject) %>%
              summarize_each(funs(mean)) %>%
              gather(m, function_value, -subject, -activity) %>%
-             separate(m, c("domain", "signal_source", "measured_quantity", "measured_function", "axis"), sep = '\\.')
+             separate(m, c("domain", "signal_source", "measured_quantity", "measured_function", "axis"), sep = '\\.') %>%
+             arrange(desc(activity), subject)
 
 rm(train_set_clean)
 rm(test_set_clean)
