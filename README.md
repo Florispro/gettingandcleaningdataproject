@@ -25,7 +25,8 @@ This script downloads and reads in the raw data from the experiment. It then cle
 - Rename the variables and values to be more descriptive
 - Get only the variables for the mean and standard deviation measurements
 - Merge the observations in one dataset
-- On the merged set it does a summarization (mean) on by activity and subject. 
+- On the merged set it does a summarization (mean) by activity and subject. 
+- It splits the columns into several columns, to turn the dataset into long-form
 - Finally it writes the resulting clean dataset to disk ('clean_set.txt').
 
 We will go through the cleaning process in detail.
@@ -47,6 +48,15 @@ The raw data includes a lot of estimations of different variables per observatio
 #### Merge the observations in one dataset
 
 The raw data is split into a 'train' and 'test' set of observations. The subjects were split into 'train' and 'test' subjects. The types of activities and variables measured are the same across the two sets of data. So in this project we merge the two sets of observations into one big set.
+
+#### Split columns
+The columns are split to get the data in long form format. The following columns are extracted:
+- Domain
+- Signal source
+- Measured quantity
+- Measured function
+- Axis
+- Function value
 
 #### Summarization (mean) by activity and subject
 
