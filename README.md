@@ -51,11 +51,11 @@ The raw data is split into a 'train' and 'test' set of observations. The subject
 
 #### Split columns
 The columns are split to get the data in long form format. The following columns are extracted:
-- Domain
-- Signal source
-- Measured quantity
-- Measured function
-- Axis
+- Domain (time or frequency)
+- Signal source (body or gravity)
+- Measured quantity (acceleration, jerk, et cetera)
+- Measured function (mean or standard deviation)
+- Axis (x, y, z or none)
 - Function value
 
 #### Summarization (mean) by activity and subject
