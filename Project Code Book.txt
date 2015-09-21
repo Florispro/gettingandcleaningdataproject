@@ -10,54 +10,55 @@ ACTIVITY
 
 SUBJECT
 	The ID of the subject doing the activity.
-	The experiment including 30 subjects. These subjects are numbered
+	The experiment included 30 subjects. These subjects are numbered
 	by ID's between 1 and 30.
 	
+DOMAIN
+	The domain of the measured FUNCTION_VALUE. Possible values are:
+	1. Time
+	2. Frequency
+	The original signals were measured in the time domain. An FFT transformation
+	was applied to get data in the frequency domain.
 
-We describe the rest of the variables by the different possible
-components in the name of the variable. 
+SIGNAL_SOURCE
+	The measured values were coming from either measurements on the body, or
+	measurements on the gravity. So the possible values are:
+	1. Body
+	2. Gravity
 
-Each of the variables in the dataset is an average per subject per 
-activity over all the observations recorded in the raw data.
+MEASURED_QUANTITY
+	Indicated the physical quantity being measured. Possible values are
+	1. Acceleration
+		The acceleration in the AXIS as measured by the accelerometer
+	2. AccelerationJerk
+		The time derivative of the acceleration measurement
+	3. AccelerationMagnitude
+		The magnitude of the acceleration, using the Euclidean norm
+	4. AccelerationJerkMagnitude
+		The magnitude of the jerk, using the Euclidean norm
+	5. Gyro
+		The angular velocitory in the AXIS as measured by the gyroscope
+	6. GyroJerk
+		The time derivative of the gyro measurement
+	7. GyroMagnitude
+		The magnitude of the angular velocity, using the Euclidean norm
+	8. GyroJerkMagnitude
+		The magnitude of the angular jerk, using the Euclidean norm		
+		
+MEASURED_FUNCTION
+	The function which was measured in the observation. Possible values are:
+	1. Mean
+	2. StandardDeviation
 
-TIME, FREQUENCY
-	The raw signals coming from the accelerometer and gyroscope in the
-	smartphone were measured in the time domain. These variables are
-	prefixed with 'Time'.
-	
-	To some raw signals from the time domain a Fast Fourer Transform was
-	applied, to get values in the frequency domain. These variables are
-	prefixed with 'Frequency'.
+AXIS
+	The axis along which the measurement was taken. N.A. values indicate the
+	measurement is not along an axis, but instead measures the magnitude.
+	Possible values are:
+	1. X
+	2. Y
+	3. Z
+	4. N.A.
 
-BODY, GRAVITY
-	Acceleration signals were split into signals for the accelaration for
-	the body and signals for gravity acceleration.
-
-ACCELERATION, GYRO
-	Signals would either come from the accelerometer or the gyroscope of
-	the Samsumg smartphone. Variables for the accelerometer contain the
-	word 'Acceleration'. For the gyroscope the variables contain the
-	word 'Gyro'. The 'Gyro' variables measure angular velocity.
-
-JERK
-	Both the Acceleration and Gyro measurements were derived in time to
-	obtain 'Jerk' signals ('AccelerationJerk' and 'GyroJerk' respectively).
-
-X, Y, Z
-	All measurements were measured in three axes 'X', 'Y' and 'Z'. The
-	axis along which the variable is measured is at the end of the
-	variable name.
-	
-MAGNITUDE
-	The magnitude of the three-dimensional signals (X, Y, Z) was calculated
-	using the Euclidean norm.
-
-MEAN
-	For variables with 'Mean' in the name, the measurement is an estimation
-	of the mean of the measured value over a short time period. Observations
-	were made at a constant rate of 50 Hz.
-
-STANDARDDEVIATION
-	For variables with 'StandardDeviation' in the name, the measurement is 
-	an estimation of the standard deviation of the measured value over a 
-	short time period. Observations were made at a constant rate of 50 Hz.
+FUNCTION_VALUE
+	The value of the measured function. It is an average per subject per 
+	activity over all the observations recorded in the raw data.
