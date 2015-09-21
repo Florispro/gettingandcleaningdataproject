@@ -8,8 +8,7 @@
 # 3. Then it 
 #    - merges the train and test data into one big set. 
 #    - On the merged set it does a summarization (mean) by activity and subject. 
-#    - It also separates the columns into several columns, such that each column corresponds 
-#      with one variable.
+#    - It also separates the columns into several columns, to get the data in long form
 # 4. Finally it writes the resulting clean dataset to disk ('clean_set.txt').
 
 require(LaF)
@@ -61,11 +60,11 @@ test_set_clean <- get_and_clean_observations(features_test, activities_test, sub
 clean_set <- merge(train_set_clean, test_set_clean, all = TRUE)
 clean_set <- clean_column_names(clean_set)
 clean_set <- clean_set %>%
-             group_by(activity, subject) %>%
-             summarize_each(funs(mean)) %>%
-             gather(m, function_value, -subject, -activity) %>%
-             separate(m, c("domain", "signal_source", "measured_quantity", "measured_function", "axis"), sep = '\\.') %>%
-             arrange(desc(activity), subject)
+  group_by(activity, subject) %>%
+  summarize_each(funs(mean)) %>%
+  gather(m, function_value, -subject, -activity) %>%
+  separate(m, c("domain", "signal_source", "measured_quantity", "measured_function", "axis"), sep = '\\.') %>%
+  arrange(desc(activity), subject)
 
 rm(train_set_clean)
 rm(test_set_clean)
